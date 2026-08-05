@@ -16,11 +16,18 @@ export default function Home() {
     <PageTransition>
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        {/* Background blobs */}
-        <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[500px] h-[500px] bg-medical-blue/10 dark:bg-medical-accent/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[500px] h-[500px] bg-medical-light/10 dark:bg-medical-blue/5 rounded-full blur-3xl" />
+        {/* Background Image & Overlay */}
+        <div 
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat w-full h-full"
+          style={{ backgroundImage: "url('/hero-bg.png')" }}
+        />
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-white/90 via-white/80 to-white dark:from-gray-950/95 dark:via-gray-950/90 dark:to-gray-950" />
+        
+        {/* Background blobs for color pop */}
+        <div className="absolute top-0 right-0 z-0 -translate-y-1/4 translate-x-1/4 w-[500px] h-[500px] bg-medical-blue/20 dark:bg-medical-accent/10 rounded-full blur-3xl mix-blend-multiply dark:mix-blend-lighten" />
+        <div className="absolute bottom-0 left-0 z-0 translate-y-1/4 -translate-x-1/4 w-[500px] h-[500px] bg-medical-light/20 dark:bg-medical-blue/10 rounded-full blur-3xl mix-blend-multiply dark:mix-blend-lighten" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
