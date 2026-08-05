@@ -83,7 +83,7 @@ export default function Contact() {
                     {
                       icon: MapPin,
                       label: 'Adresse',
-                      value: '123 Rue Didouche Mourad\nAlger Centre, 16000',
+                      value: ' sig\nMascara, 29000',
                       color: 'text-blue-500 bg-blue-100 dark:bg-blue-900/30',
                     },
                     {
