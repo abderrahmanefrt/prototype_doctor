@@ -18,6 +18,7 @@ import PatientDashboard from './pages/PatientDashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import InstallPrompt from './components/InstallPrompt';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -57,6 +58,7 @@ function AppLayout() {
         <AnimatedRoutes />
       </main>
       {!isMessagesPage && <Footer />}
+      <InstallPrompt />
     </div>
   );
 }
