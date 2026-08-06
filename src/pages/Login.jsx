@@ -111,7 +111,7 @@ export default function Login() {
                         whileTap={{ scale: 0.99 }}
                         onClick={() => handleDemoLogin(account)}
                         disabled={isSubmitting}
-                        className={`w-full p-3.5 rounded-2xl border ${roleBgColors[account.role]} flex items-center gap-3 transition-all duration-300 group cursor-pointer disabled:opacity-60`}
+                        className={`w-full p-3.5 rounded-2xl border ${roleBgColors[account.role]} flex flex-wrap items-center gap-3 transition-all duration-300 group cursor-pointer disabled:opacity-60 min-w-0`}
                       >
                         <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${roleColors[account.role]} flex items-center justify-center text-white shadow-md group-hover:shadow-lg transition-shadow`}>
                           <Icon className="w-5 h-5" />
@@ -120,9 +120,9 @@ export default function Login() {
                           <p className={`text-sm font-bold ${roleTextColors[account.role]}`}>{account.name}</p>
                           <p className="text-[10px] text-gray-500 dark:text-gray-400">{account.description}</p>
                         </div>
-                        <div className="flex flex-col items-end gap-0.5">
-                          <code className="text-[9px] font-mono bg-white/60 dark:bg-gray-700 px-1.5 py-0.5 rounded text-gray-600 dark:text-gray-300">{account.email}</code>
-                          <code className="text-[9px] font-mono bg-white/60 dark:bg-gray-700 px-1.5 py-0.5 rounded text-gray-600 dark:text-gray-300">{account.password}</code>
+                        <div className="flex flex-col items-end gap-0.5 min-w-0 max-w-full sm:max-w-[150px]">
+                          <code className="text-[9px] font-mono bg-white/60 dark:bg-gray-700 px-1.5 py-0.5 rounded text-gray-600 dark:text-gray-300 truncate max-w-full block">{account.email}</code>
+                          <code className="text-[9px] font-mono bg-white/60 dark:bg-gray-700 px-1.5 py-0.5 rounded text-gray-600 dark:text-gray-300 truncate max-w-full block">{account.password}</code>
                         </div>
                       </motion.button>
                     );

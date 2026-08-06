@@ -68,8 +68,8 @@ export default function InstallPrompt() {
         </button>
         
         <div className="flex items-start gap-4">
-          <div className="w-14 h-14 rounded-2xl bg-medical-blue flex-shrink-0 flex items-center justify-center p-0 overflow-hidden mt-1 shadow-lg shadow-medical-blue/20">
-            <img src="/pwa-192x192.png" alt="Doctori App" className="w-full h-full object-cover" />
+          <div className="w-14 h-14 rounded-2xl bg-medical-blue flex-shrink-0 flex items-center justify-center p-2 overflow-hidden mt-1 shadow-lg shadow-medical-blue/20">
+            <img src="/logo.png" alt="Doctori App" className="w-full h-full object-contain" />
           </div>
           <div>
             <h3 className="font-bold text-gray-900 dark:text-white mb-1 leading-tight">Installer Doctori</h3>

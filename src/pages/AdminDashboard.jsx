@@ -61,11 +61,11 @@ export default function AdminDashboard() {
     <PageTransition>
       <div className="pt-24 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8 min-w-0">
           <div>
             <div className="flex items-center gap-2 mb-1">
               <ShieldCheck className="w-6 h-6 text-medical-blue" />
-              <h1 className="text-3xl font-bold dark:text-white">Dashboard Admin</h1>
+              <h1 className="text-3xl font-bold dark:text-white break-words">Dashboard Admin</h1>
             </div>
             <p className="text-gray-500">Bienvenue, {user?.name || 'Administrateur Doctori'}</p>
           </div>

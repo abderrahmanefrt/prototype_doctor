@@ -249,23 +249,23 @@ export default function DoctorDashboard() {
         {/* Header Banner */}
         <div className="card p-6 sm:p-8 bg-gradient-to-r from-medical-blue via-blue-700 to-indigo-800 text-white border-none shadow-2xl mb-8 relative overflow-hidden">
           <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 rounded-full bg-white/10 blur-3xl pointer-events-none" />
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 relative z-10">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 relative z-10 min-w-0">
             <div className="flex items-center gap-4">
               <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white font-black text-2xl shadow-inner border border-white/30">
                 {profileData.name.charAt(4) || 'D'}
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <h1 className="text-2xl sm:text-3xl font-bold">{profileData.name}</h1>
+                  <h1 className="text-2xl sm:text-3xl font-bold break-words">{profileData.name}</h1>
                   <span className="px-2.5 py-0.5 rounded-full bg-emerald-400/20 text-emerald-300 text-xs font-bold border border-emerald-400/30">
                     Médecin Vérifié
                   </span>
                 </div>
-                <p className="text-blue-100 text-sm mt-1">{profileData.specialty} • {profileData.city} • Tél: {profileData.phone}</p>
+                <p className="text-blue-100 text-sm mt-1 break-words">{profileData.specialty} • {profileData.city} • Tél: {profileData.phone}</p>
               </div>
             </div>
 
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
               <button
                 onClick={() => setShowEditProfileModal(true)}
                 className="btn-secondary !bg-white/10 !text-white !border-white/20 hover:!bg-white/20 text-sm font-semibold flex items-center gap-2"
@@ -481,7 +481,7 @@ export default function DoctorDashboard() {
                 </div>
 
                 {/* Filter Selector */}
-                <div className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 p-1.5 rounded-2xl overflow-x-auto max-w-full">
+                <div className="flex flex-wrap items-center gap-2 bg-gray-100 dark:bg-gray-800 p-1.5 rounded-2xl max-w-full">
                   {['Tous', 'En attente', 'Confirmé', 'Refusé'].map((f) => (
                     <button
                       key={f}
@@ -521,7 +521,7 @@ export default function DoctorDashboard() {
                             <h3 className="font-bold text-gray-900 dark:text-white text-base">{apt.patientName}</h3>
                             <span className="text-xs text-gray-400">• Tél: {apt.patientPhone}</span>
                           </div>
-                          <p className="text-xs text-gray-500 mt-1 flex items-center gap-3">
+                          <p className="text-xs text-gray-500 mt-1 flex flex-wrap items-center gap-x-3 gap-y-1">
                             <span className="flex items-center gap-1 font-semibold text-medical-blue">
                               <Calendar className="w-3.5 h-3.5" />
                               {apt.dayName} {apt.date} à {apt.time}
@@ -537,7 +537,7 @@ export default function DoctorDashboard() {
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-3 w-full md:w-auto justify-end border-t md:border-t-0 pt-3 md:pt-0 border-gray-100 dark:border-gray-700">
+                      <div className="flex flex-wrap items-center gap-2 sm:gap-3 w-full md:w-auto justify-end border-t md:border-t-0 pt-3 md:pt-0 border-gray-100 dark:border-gray-700">
                         <span
                           className={`text-xs font-bold px-3 py-1.5 rounded-xl ${
                             apt.status === 'Confirmé'
@@ -608,7 +608,7 @@ export default function DoctorDashboard() {
                 </div>
 
                 {/* Cabinet / Domicile Mode Switcher */}
-                <div className="flex p-1 bg-gray-100 dark:bg-gray-800 rounded-2xl">
+                <div className="flex flex-wrap p-1 bg-gray-100 dark:bg-gray-800 rounded-2xl">
                   <button
                     onClick={() => setPlanningMode('cabinet')}
                     className={`px-4 py-2 text-xs font-bold rounded-xl transition-all flex items-center gap-1.5 ${

@@ -89,7 +89,7 @@ export default function Contact() {
                     {
                       icon: Mail,
                       label: 'Email',
-                      value: 'contact@tabib.dz',
+                      value: 'contact@doctori.dz',
                       color: 'text-emerald-500 bg-emerald-100 dark:bg-emerald-900/30',
                     },
                     {

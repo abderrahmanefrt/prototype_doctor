@@ -9,6 +9,14 @@
     box-sizing: border-box;
   }
 
+  html,
+  body,
+  #root {
+    overflow-x: clip;
+    width: 100%;
+    max-width: 100%;
+  }
+
   html {
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
@@ -24,7 +32,9 @@
   }
 
   /* Prevent zoom on input focus on iOS */
-  input, select, textarea {
+  input,
+  select,
+  textarea {
     font-size: 16px !important;
   }
 
@@ -35,35 +45,15 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 
-      bg-gradient-to-r from-medical-blue to-medical-light 
-      text-white font-semibold rounded-xl
-      shadow-lg shadow-medical-blue/25
-      hover:shadow-xl hover:shadow-medical-blue/30
-      hover:from-medical-dark hover:to-medical-blue
-      transform hover:-translate-y-0.5
-      transition-all duration-300 ease-out
-      focus:outline-none focus:ring-2 focus:ring-medical-blue/50 focus:ring-offset-2
-      dark:focus:ring-offset-gray-900
-      active:translate-y-0 active:shadow-md;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-medical-blue to-medical-light text-white font-semibold rounded-xl shadow-lg shadow-medical-blue/25 hover:shadow-xl hover:shadow-medical-blue/30 hover:from-medical-dark hover:to-medical-blue transform hover:-translate-y-0.5 transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-medical-blue/50 focus:ring-offset-2 dark:focus:ring-offset-gray-900 active:translate-y-0 active:shadow-md;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3
-      bg-white dark:bg-gray-800 text-medical-blue dark:text-medical-accent
-      font-semibold rounded-xl border-2 border-medical-blue/20 dark:border-medical-accent/20
-      hover:bg-medical-pale dark:hover:bg-gray-700 hover:border-medical-blue/40 dark:hover:border-medical-accent/40
-      transform hover:-translate-y-0.5
-      transition-all duration-300 ease-out
-      focus:outline-none focus:ring-2 focus:ring-medical-blue/50 focus:ring-offset-2
-      dark:focus:ring-offset-gray-900;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-white dark:bg-gray-800 text-medical-blue dark:text-medical-accent font-semibold rounded-xl border-2 border-medical-blue/20 dark:border-medical-accent/20 hover:bg-medical-pale dark:hover:bg-gray-700 hover:border-medical-blue/40 dark:hover:border-medical-accent/40 transform hover:-translate-y-0.5 transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-medical-blue/50 focus:ring-offset-2 dark:focus:ring-offset-gray-900;
   }
 
   .card {
-    @apply bg-white dark:bg-gray-800/80 rounded-2xl 
-      border border-gray-100 dark:border-gray-700/50
-      shadow-sm hover:shadow-xl dark:hover:shadow-2xl dark:hover:shadow-medical-blue/5
-      transition-all duration-300 ease-out;
+    @apply bg-white dark:bg-gray-800/80 rounded-2xl border border-gray-100 dark:border-gray-700/50 shadow-sm hover:shadow-xl dark:hover:shadow-2xl dark:hover:shadow-medical-blue/5 transition-all duration-300 ease-out;
   }
 
   .card-hover {
@@ -71,8 +61,7 @@
   }
 
   .glass {
-    @apply bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl 
-      border border-white/20 dark:border-gray-700/30;
+    @apply bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/20 dark:border-gray-700/30;
   }
 
   .section-title {
@@ -84,19 +73,11 @@
   }
 
   .input-field {
-    @apply w-full px-4 py-3 rounded-xl 
-      bg-gray-50 dark:bg-gray-800 
-      border border-gray-200 dark:border-gray-700
-      text-gray-800 dark:text-gray-200
-      placeholder-gray-400 dark:placeholder-gray-500
-      focus:outline-none focus:ring-2 focus:ring-medical-blue/40 focus:border-medical-blue
-      transition-all duration-200;
+    @apply w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-medical-blue/40 focus:border-medical-blue transition-all duration-200;
   }
 
   .badge {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium
-      bg-medical-pale dark:bg-medical-blue/20 
-      text-medical-dark dark:text-medical-accent;
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-medical-pale dark:bg-medical-blue/20 text-medical-dark dark:text-medical-accent;
   }
 }
 
@@ -115,6 +96,7 @@
       opacity: 0;
       transform: translateY(24px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);

@@ -55,7 +55,7 @@ export default function PatientDashboard() {
         {/* Header */}
         <div className="card p-6 sm:p-8 bg-gradient-to-r from-medical-blue via-blue-600 to-indigo-700 text-white shadow-xl mb-8 relative overflow-hidden">
           <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-48 h-48 rounded-full bg-white/10 blur-3xl pointer-events-none" />
-          <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+          <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 min-w-0">
             <div>
               <h1 className="text-2xl sm:text-3xl font-bold mb-2">Bonjour, {user?.name}</h1>
               <p className="text-blue-100">Bienvenue sur votre espace patient Doctori.</p>

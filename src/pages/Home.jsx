@@ -15,17 +15,16 @@ export default function Home() {
   return (
     <PageTransition>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        {/* Background Image & Overlay */}
-        <div 
+      <section className="relative overflow-hidden overflow-x-clip pt-20 pb-12 sm:pt-24 sm:pb-16 lg:pt-48 lg:pb-32">        {/* Background Image & Overlay */}
+        <div
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat w-full h-full"
           style={{ backgroundImage: "url('/hero-bg.png')" }}
         />
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-white/90 via-white/80 to-white dark:from-gray-950/95 dark:via-gray-950/90 dark:to-gray-950" />
-        
+
         {/* Background blobs for color pop */}
-        <div className="absolute top-0 right-0 z-0 -translate-y-1/4 translate-x-1/4 w-[500px] h-[500px] bg-medical-blue/20 dark:bg-medical-accent/10 rounded-full blur-3xl mix-blend-multiply dark:mix-blend-lighten" />
-        <div className="absolute bottom-0 left-0 z-0 translate-y-1/4 -translate-x-1/4 w-[500px] h-[500px] bg-medical-light/20 dark:bg-medical-blue/10 rounded-full blur-3xl mix-blend-multiply dark:mix-blend-lighten" />
+        <div className="hidden md:block absolute top-0 -right-16 z-0 -translate-y-1/4 w-[min(500px,50vw)] h-[min(500px,50vw)] bg-medical-blue/20 dark:bg-medical-accent/10 rounded-full blur-3xl mix-blend-multiply dark:mix-blend-lighten" />
+        <div className="hidden md:block absolute bottom-0 -left-16 z-0 translate-y-1/4 w-[min(500px,50vw)] h-[min(500px,50vw)] bg-medical-light/20 dark:bg-medical-blue/10 rounded-full blur-3xl mix-blend-multiply dark:mix-blend-lighten" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
@@ -42,9 +41,15 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-3xl sm:text-5xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8 leading-[1.1] tracking-tight"
+              className="text-4xl
+                                sm:text-5xl
+lg:text-7xl
+leading-tight
+break-words font-bold text-gray-900 dark:text-white mb-6 sm:mb-8 leading-[1.1] tracking-tight"
             >
-              Prenez soin de votre santé{' '}
+              Prenez soin de{' '}
+              <br className="sm:hidden" />
+              votre santé{' '}
               <span className="text-gradient">simplement et rapidement.</span>
             </motion.h1>
 
@@ -52,7 +57,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed"
+              className="text-base sm:text-xl text-gray-600 dark:text-gray-400 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed px-2"
             >
               Trouvez les meilleurs médecins spécialistes à travers toute l'Algérie et réservez
               votre consultation en quelques clics, à tout moment.
@@ -62,13 +67,13 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.4 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4"
             >
-              <Link to="/doctors" className="btn-primary w-full sm:w-auto text-lg !py-4 !px-8 flex items-center justify-center gap-2 group">
+              <Link to="/doctors" className="btn-primary text-base sm:text-lg !py-3 sm:!py-4 !px-6 sm:!px-8 flex items-center justify-center gap-2 group">
                 <Search className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 Trouver un médecin
               </Link>
-              <Link to="/login" className="btn-secondary w-full sm:w-auto text-lg !py-4 !px-8 flex items-center justify-center gap-2">
+              <Link to="/login" className="btn-secondary text-base sm:text-lg !py-3 sm:!py-4 !px-6 sm:!px-8 flex items-center justify-center gap-2">
                 <ShieldCheck className="w-5 h-5" />
                 Se connecter
               </Link>
@@ -79,7 +84,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-24"
+              className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-16 sm:mt-24"
             >
               {[
                 { label: 'Médecins vérifiés', value: '500+' },
@@ -257,18 +262,18 @@ export default function Home() {
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center text-white">
-          <h2 className="text-3xl sm:text-5xl font-bold mb-8 leading-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 leading-tight">
             Prêt à prendre votre premier <br className="hidden sm:block" /> rendez-vous ?
           </h2>
-          <p className="text-lg text-white/80 mb-12 max-w-xl mx-auto">
+          <p className="text-base sm:text-lg text-white/80 mb-8 sm:mb-12 max-w-xl mx-auto">
             Rejoignez des milliers d'Algériens qui font confiance à Doctori pour leur santé.
             C'est gratuit et ça le restera.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/register" className="bg-white text-medical-blue hover:bg-gray-100 py-4 px-8 rounded-2xl font-bold text-lg shadow-xl shadow-black/10 transition-all hover:scale-105 active:scale-95 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
+            <Link to="/register" className="bg-white text-medical-blue hover:bg-gray-100 py-3 sm:py-4 px-6 sm:px-8 rounded-2xl font-bold text-base sm:text-lg shadow-xl shadow-black/10 transition-all hover:scale-105 active:scale-95 text-center">
               S'inscrire gratuitement
             </Link>
-            <Link to="/login" className="border-2 border-white/30 hover:bg-white/10 py-4 px-8 rounded-2xl font-bold text-lg transition-all w-full sm:w-auto">
+            <Link to="/login" className="border-2 border-white/30 hover:bg-white/10 py-3 sm:py-4 px-6 sm:px-8 rounded-2xl font-bold text-base sm:text-lg transition-all text-center">
               J'ai déjà un compte
             </Link>
           </div>

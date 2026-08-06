@@ -52,7 +52,7 @@ function AppLayout() {
   const isMessagesPage = location.pathname === '/messages';
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen overflow-x-clip w-full">
       <Navbar />
       <main className="flex-1">
         <AnimatedRoutes />

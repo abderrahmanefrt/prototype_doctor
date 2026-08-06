@@ -56,11 +56,9 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to={getHomePath()} className="flex items-center gap-3 group">
-            <div className="flex items-center justify-center">
-              <img src="/logo.png" alt="Doctori Logo" className="h-[60px] md:h-[72px] w-auto object-contain drop-shadow-sm transition-transform group-hover:scale-105" />
-            </div>
-            <span className="text-2xl font-black tracking-tight text-gray-900 dark:text-white mt-1">
+          <Link to={getHomePath()} className="flex items-center gap-2 group shrink-0">
+            <img src="/logo.png" alt="Doctori Logo" className="h-8 md:h-12 w-auto object-contain" />
+            <span className="text-lg md:text-2xl font-black tracking-tight text-gray-900 dark:text-white">
               Doctori
             </span>
           </Link>
